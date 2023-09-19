@@ -9,7 +9,17 @@ Shell:
 		- zsh-autocomplete
 	Themes:
 		- "norm"
-
+		- Powerlevel10K
+	
 Terminal Emulator:
 	- Alacritty
+
+Menu: 
+	- Rofi
+
+WM: 
+	- i3
+
+Status Bar:
+	- PolyBar
 
