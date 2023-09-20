@@ -26,3 +26,7 @@ Status Bar:
 
 Compositor:
 - Picom
+
+Other cli programs:
+- idea
+- birthday
