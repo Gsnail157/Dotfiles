@@ -16,7 +16,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="half-life"
 
 #Other Themes I like:
 #norm
@@ -108,11 +108,16 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias v="nvim"
-alias zshconfig="v ~/.zshrc"
+alias nv="nvim"
+alias zshconfig="nv ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias alacrittyconfig="v ~/.config/alacritty/alacritty.yml"
-alias i3config="v ~/.config/i3/config"
-alias polybarconfig="v ~/.config/polybar/config.ini"
+alias alacrittyconfig="nv ~/.config/alacritty/alacritty.yml"
+alias i3config="nv ~/.config/i3/config"
+alias polybarconfig="nv ~/.config/polybar/config.ini"
+alias bday="birthday"
+alias cal="calcure"
+alias oc="opencomic"
+alias manga="mangodl"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
