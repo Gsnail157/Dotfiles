@@ -10,7 +10,7 @@ zsh Plugins:
 
 zsh Themes:
 - "norm"
-- Powerlevel10K
+- "half-life"
 	
 Terminal Emulator:
 - Alacritty
@@ -28,5 +28,6 @@ Compositor:
 - Picom
 
 Other cli programs:
-- idea
-- birthday
+- birthday: Tracks birthdays
+- neofetch: shows computer specs
+- calcure: calendar
