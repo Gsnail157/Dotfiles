@@ -126,6 +126,7 @@ alias cal="calcure"
 alias oc="opencomic"
 alias manga="mangodl"
 alias pokemmo="cd ~/Downloads; ./PokeMMO.sh"
+alias c="clear"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
