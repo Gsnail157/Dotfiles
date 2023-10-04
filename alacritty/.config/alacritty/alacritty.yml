@@ -9,16 +9,16 @@ window:
 
 font:
   normal:
-    family: MesloLGS Nerd Font Mono
+    family: ProggyClean Nerd Font
     style: Regular
   bold:
-    family: MesloLGS Nerd Font Mono
+    family: ProggyClean Nerd Font
     style: Bold
   italic:
-    family: MesloLGS Nerd Font Mono
+    family: ProggyClean Nerd Font
     style:  Italic
   bold_italic:
-    family: MesloLGS Nerd Font Mono
+    family: ProggyClean Nerd Font
     style: Bold Italic
   size: 12
   offset:

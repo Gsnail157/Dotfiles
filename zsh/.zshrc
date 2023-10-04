@@ -9,7 +9,6 @@ if [ -z "${DISPLAY}" ] && [ $(tty) = /dev/tty1 ]; then
   exec startx
 fi
 
-source ~/.local/share/icons-in-terminal/icons_bash.sh
 source ~/Repos/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
