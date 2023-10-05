@@ -187,7 +187,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpapers/river.jpg 
+exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpapers/1.jpg
 
 default_border none
 gaps inner 3
