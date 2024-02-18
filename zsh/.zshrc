@@ -117,15 +117,12 @@ source $ZSH/oh-my-zsh.sh
 alias nv="nvim"
 alias zshconfig="nv ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias alacrittyconfig="nv ~/.config/alacritty/alacritty.yml"
+alias nvimconfig="nv ~/.config/nvim/init.lua"
+alias alacrittyconfig="nv ~/.config/alacritty/alacritty.toml"
 alias i3config="nv ~/.config/i3/config"
 alias polybarconfig="nv ~/.config/polybar/config.ini"
 alias bday="birthday"
-alias cal="calcure"
-alias oc="opencomic"
-alias manga="mangodl"
-alias pokemmo="cd ~/Downloads; ./PokeMMO.sh"
-alias c="clear"
+alias cls="clear"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
