@@ -2,7 +2,7 @@
 
 # Install all dependencies
 echo "Starting new setup"
-sudo pacman -S firefox rofi tmux polybar picom alacritty
+sudo pacman -S firefox rofi tmux polybar picom alacritty zsh
 
 # Installing Rofi Themes
 cd ~/
