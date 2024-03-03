@@ -125,6 +125,7 @@ alias polybarconfig="nv ~/.config/polybar/config.ini"
 alias bday="birthday"
 alias cls="clear"
 alias anime="ani-cli --rofi --dub --no-detach"
+alias tmuxconfig="nv ~/.config/tmux/tmux.conf"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
