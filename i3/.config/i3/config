@@ -48,8 +48,6 @@ bindsym $mod+Shift+Left split h
 bindsym $mod+Shift+Down split v
 bindsym $mod+Shift+Up split v
 
-
-
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
@@ -93,7 +91,7 @@ bindsym $mod+Control+Right resize grow width 50 px or 50 ppt
 
 # START UP PROGRAMS 
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/1.jpg
+exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/river.jpg
 exec ~/Scripts/tmon.sh
 exec --no-startup-id picom -b --config ~/.config/picom/picom.conf
 

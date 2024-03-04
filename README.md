@@ -1,45 +1,31 @@
-This is a file of everything that I use for linux
-(This was made using Fedora 36 btw)
+# My Dotfiles *Made by: Gsnail157*
+
+![alt text](https://github.com/Gsnail157/Dotfiles/wallpapers/Pictures/wallpapers/fullscreen.png?raw=true)
+![alt text](https://github.com/Gsnail157/Dotfiles/wallpapers/Pictures/wallpapers/fullscreen2.png?raw=true)
 
 ## Info
-
-Recommended to use `stow` cli tool. 
-Fedora: `sudo dnf install stow`
+    - Config specifically made for arch
+    - Recommended to use `stow` cli tool. 
 
 ## Installation
-1. Clone repository into your home directory. `git clone https://github.com/Gsnail157/dotfiles.git`
-2. Change directory into the new repository. `cd dotfiles`
-3. Use `stow */` to create symlink for all folders OR `stow folder-name` to create a symlink for a single folder 
+    1. Clone repository into your home directory.
+    ```
+   `git clone https://github.com/Gsnail157/dotfiles.git` 
+    ```
+    2. `cd` into the cloned repository. 
+    3. Use the start up script to download all dependencies and `stow` dotfiles.
+    ```
+    chmod +x startup.sh
+    ./startup.sh
+    ```
 
-## What I am using
-
-Shell:
-- Zsh	
-
+## Configuration
+Shell: Zsh	
 zsh Plugins:
 - Oh-my-zsh
-- zsh-autocomplete
-
-zsh Themes:
-- "norm"
-- "half-life"
-	
-Terminal Emulator:
-- Alacritty
-
-Menu:
-- Rofi
-
-WM:
-- i3
-
-Status Bar:
-- PolyBar
-
-Compositor:
-- Picom
-
-Other cli programs:
-- birthday: Tracks birthdays
-- neofetch: shows computer specs
-- calcure: calendar
+- zsh-autocomplete	
+Terminal: Alacritty
+Menu: Rofi
+WM: i3
+Status Bar: PolyBar
+Compositor: Picom
