@@ -24,8 +24,8 @@ chmod +x startup.sh
 ## Configuration:
 Shell: Zsh
 zsh Plugins:
-- Oh-my-zsh
-- zsh-autocomplete
+Oh-my-zsh
+zsh-autocomplete
 Terminal: Alacritty
 Menu: Rofi
 WM: i3
