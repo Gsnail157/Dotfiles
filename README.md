@@ -1,7 +1,7 @@
 ## My Dotfiles:
 *Made by: Gsnail157*
 
-<div align = center><img src="https://raw.githubusercontent.com/Gsnail157/Dotfiles/wallpapers/Pictures/wallpapers/fullscreen.png"><br><br>
+<div align = center><img src="https://github.com/Gsnail157/Dotfiles/blob/main/wallpapers/Pictures/wallpapers/fullscreen.png"><br><br>
 ![Screen1](https://github.com/Gsnail157/Dotfiles/wallpapers/fullscreen.png)
 ![Screen2](https://github.com/Gsnail157/Dotfiles/wallpapers/Pictures/wallpapers/fullscreen2.png)
 
