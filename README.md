@@ -22,12 +22,12 @@ chmod +x startup.sh
 ```
 
 ## Configuration:
-Shell: Zsh
-zsh Plugins:
-Oh-my-zsh
-zsh-autocomplete
-Terminal: Alacritty
-Menu: Rofi
-WM: i3
-Status Bar: PolyBar
+Shell: Zsh <br>
+zsh Plugins: <br>
+Oh-my-zsh<br>
+zsh-autocomplete<br>
+Terminal: Alacritty<br>
+Menu: Rofi<br>
+WM: i3<br>
+Status Bar: PolyBar<br>
 Compositor: Picom
