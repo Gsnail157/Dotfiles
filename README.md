@@ -1,14 +1,15 @@
-# My Dotfiles\ 
+## My Dotfiles:
 *Made by: Gsnail157*
 
+<div align = center><img src="https://raw.githubusercontent.com/Gsnail157/Dotfiles/wallpapers/Pictures/wallpapers/fullscreen.png"><br><br>
 ![Screen1](https://github.com/Gsnail157/Dotfiles/wallpapers/fullscreen.png)
 ![Screen2](https://github.com/Gsnail157/Dotfiles/wallpapers/Pictures/wallpapers/fullscreen2.png)
 
-## Info
+## Info:
 - Config specifically made for arch
 - Recommended to use `stow` cli tool. 
 
-## Installation
+## Installation:
 1. Clone repository into your home directory.\
     
 ```
@@ -22,13 +23,13 @@ chmod +x startup.sh
 ./startup.sh
 ```
 
-## Configuration
-Shell: Zsh\	
-zsh Plugins:\
-- Oh-my-zsh\
-- zsh-autocomplete\	
-Terminal: Alacritty\
-Menu: Rofi\
-WM: i3\
-Status Bar: PolyBar\
+## Configuration:
+Shell: Zsh
+zsh Plugins:
+- Oh-my-zsh
+- zsh-autocomplete
+Terminal: Alacritty
+Menu: Rofi
+WM: i3
+Status Bar: PolyBar
 Compositor: Picom
