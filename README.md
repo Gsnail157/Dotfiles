@@ -1,7 +1,8 @@
-# My Dotfiles *Made by: Gsnail157*
+# My Dotfiles\ 
+*Made by: Gsnail157*
 
-![alt text](https://github.com/Gsnail157/Dotfiles/wallpapers/Pictures/wallpapers/fullscreen.png?raw=true)
-![alt text](https://github.com/Gsnail157/Dotfiles/wallpapers/Pictures/wallpapers/fullscreen2.png?raw=true)
+!(https://github.com/Gsnail157/Dotfiles/wallpapers/fullscreen.png?raw=true)
+!(https://github.com/Gsnail157/Dotfiles/wallpapers/Pictures/wallpapers/fullscreen2.png?raw=true)
 
 ## Info
     - Config specifically made for arch
@@ -10,7 +11,7 @@
 ## Installation
     1. Clone repository into your home directory.
     ```
-   `git clone https://github.com/Gsnail157/dotfiles.git` 
+    git clone https://github.com/Gsnail157/dotfiles.git 
     ```
     2. `cd` into the cloned repository. 
     3. Use the start up script to download all dependencies and `stow` dotfiles.
@@ -20,12 +21,12 @@
     ```
 
 ## Configuration
-Shell: Zsh	
-zsh Plugins:
-- Oh-my-zsh
-- zsh-autocomplete	
-Terminal: Alacritty
-Menu: Rofi
-WM: i3
-Status Bar: PolyBar
+Shell: Zsh\	
+zsh Plugins:\
+- Oh-my-zsh\
+- zsh-autocomplete\	
+Terminal: Alacritty\
+Menu: Rofi\
+WM: i3\
+Status Bar: PolyBar\
 Compositor: Picom
