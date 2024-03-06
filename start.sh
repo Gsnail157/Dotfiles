@@ -9,13 +9,17 @@ cd ~/
 mkdir Documents Downloads Repos
 cd ~/Repos
 git clone --depth=1 https://github.com/adi1090x/rofi.git
-cd Rofi
+cd rofi
 chmod +x setup.sh
 ./setup.sh
 
 # Installing zsh-autocomplete
 cd ~/Repos
 git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git
+
+# Installing tmux plugins
+
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Installing yay for AUR
 cd ~/Repos
