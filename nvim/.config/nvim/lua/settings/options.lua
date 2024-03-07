@@ -15,4 +15,3 @@ vim.opt.mouse = "a"
 vim.opt.writebackup = false
 vim.opt.updatetime = 1000
 vim.opt.smartindent = true
-

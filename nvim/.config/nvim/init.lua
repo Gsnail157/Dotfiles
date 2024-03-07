@@ -1,10 +1,7 @@
 require("settings.options")
+require("settings.keymaps")
+require("settings.plugins")
 
--- Set <space> as the leader key
--- See `:help mapleader`
---  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
 
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
