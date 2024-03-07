@@ -1,9 +1,4 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# .zshrc Config File
 
 if [ -z "${DISPLAY}" ] && [ $(tty) = /dev/tty1 ]; then
   exec startx
@@ -118,7 +113,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 alias nv="nvim"
 alias zshconfig="nv ~/.zshrc"
-alias nvimconfig="nv ~/.config/nvim/init.lua"
+alias nvimconfig="nv ~/.config/nvim/lua/settings"
 alias alacrittyconfig="nv ~/.config/alacritty/alacritty.toml"
 alias i3config="nv ~/.config/i3/config"
 alias polybarconfig="nv ~/.config/polybar/config.ini"
