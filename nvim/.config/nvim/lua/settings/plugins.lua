@@ -1,6 +1,8 @@
 -- PLUGINS FILE FOR NVIM -- 
  fn = vim.fn
--- Automatically install packer local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+
+ -- Automatically install packer --
+local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
 	PACKER_BOOTSTRAP = fn.system({
 		"git",
@@ -105,11 +107,11 @@ return packer.startup(function(use)
         require("catppuccin")
     }
     
-    -- use { 'xiyaowong/transparent.nvim',
-    --     config = function()
-    --         require("transparent").setup()
-    --     end
-    -- }
+    use { 'xiyaowong/transparent.nvim',
+        config = function()
+            require("transparent").setup()
+        end
+    }
 
     -- Comment Code Plugin -- 
     use { 'numToStr/Comment.nvim',
