@@ -9,6 +9,9 @@ vim.opt.expandtab = true
 vim.opt.softtabstop = 4
 
 -- Other Useful Options
+-- vim.opt.termguicolors = true
+vim.opt.wrap = true
+vim.opt.linebreak = true
 vim.opt.undofile = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.mouse = "a"

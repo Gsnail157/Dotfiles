@@ -31,3 +31,6 @@ Menu: Rofi<br>
 WM: i3<br>
 Status Bar: PolyBar<br>
 Compositor: Picom
+
+## Considerations
+ May consider switching to using kitty for my terminal for native image support

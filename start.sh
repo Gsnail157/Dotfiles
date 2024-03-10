@@ -1,12 +1,30 @@
 #!/bin/bash
 
-# Install all dependencies
 echo "Starting new setup"
-sudo pacman -S firefox rofi tmux polybar picom alacritty zsh stow base-devel
+
+# Create Home Directory Folders
+
+cd ~/
+if [[ ! -d "Downloads "]]; then
+    mkdir Downloads
+fi
+
+if [[ ! -d "Repos" ]]; then
+    mkdir Repos
+fi
+
+if [[ ! -d "Documents" ]]; then
+    mkdir Documents
+fi
+
+if [[ ! -d "Pictures" ]]; then
+    mkdir Pictures
+fi
+
+# Install all dependencies
+sudo pacman -S firefox rofi tmux polybar picom alacritty zsh stow base-devel lf
 
 # Installing Rofi Themes
-cd ~/
-mkdir Documents Downloads Repos
 cd ~/Repos
 git clone --depth=1 https://github.com/adi1090x/rofi.git
 cd rofi
@@ -18,7 +36,6 @@ cd ~/Repos
 git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git
 
 # Installing tmux plugins
-
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Installing yay for AUR
@@ -28,7 +45,6 @@ cd yay
 makepkg -si
 
 # Installing oh-my-zsh
-
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Stow all the config files into their correct spot
