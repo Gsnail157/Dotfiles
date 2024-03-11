@@ -107,11 +107,12 @@ return packer.startup(function(use)
         require("catppuccin")
     }
     
-    use { 'xiyaowong/transparent.nvim',
-        config = function()
-            require("transparent").setup()
-        end
-    }
+    -- Transparent Background --
+    -- use { 'xiyaowong/transparent.nvim',
+    --     config = function()
+    --         require("transparent").setup()
+    --     end
+    -- }
 
     -- Comment Code Plugin -- 
     use { 'numToStr/Comment.nvim',

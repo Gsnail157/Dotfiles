@@ -1,2 +1,2 @@
-vim.cmd "colorscheme catppuccin-mocha"
+vim.cmd "colorscheme catppuccin-macchiato"
 vim.g.transparent_enabled = true
