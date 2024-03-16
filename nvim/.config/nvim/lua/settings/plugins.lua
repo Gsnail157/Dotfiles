@@ -1,11 +1,8 @@
 -- PLUGINS FILE FOR NVIM -- 
  fn = vim.fn
-
  -- Automatically install packer --
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-	PACKER_BOOTSTRAP = fn.system({
-		"git",
+local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim" if fn.empty(fn.glob(install_path)) > 0 then
+	PACKER_BOOTSTRAP = fn.system({ "git",
 		"clone",
 		"--depth",
 		"1",
@@ -91,10 +88,27 @@ return packer.startup(function(use)
         end,
         requires = { 'nvim-tree/nvim-web-devicons' }
     }
-    
-    -- coc plugin -- 
-    use { 'neoclide/coc.nvim', branch = 'release', event = "VimEnter" }
 
+    -- Completetion --
+    use { "hrsh7th/cmp-nvim-lsp" }
+    use { "hrsh7th/cmp-buffer" }
+    use { "hrsh7th/cmp-path" }
+    use { "hrsh7th/cmp-cmdline" }
+    use { "hrsh7th/nvim-cmp" }
+
+    -- LSP --
+    use { 'neovim/nvim-lspconfig' }
+    use { 'williamboman/mason.nvim', config = function()require('mason').setup() end }
+    use { 'williamboman/mason-lspconfig.nvim',
+        config = function()require("mason-lspconfig").setup{ }
+        end
+    }
+
+    -- Telescope --
+    use { 'nvim-telescope/telescope.nvim',
+        requires = { 'nvim-lua/plenary.nvim' } 
+    }
+    
     -- Adding color feature to neovim --
     use { 'NvChad/nvim-colorizer.lua',
         config = function()
