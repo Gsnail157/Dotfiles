@@ -91,7 +91,7 @@ bindsym $mod+Control+Right resize grow width 50 px or 50 ppt
 
 # START UP PROGRAMS 
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/cool.jpg
+exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/frieren.png
 exec ~/Scripts/tmon.sh
 exec --no-startup-id picom -b --config ~/.config/picom/picom.conf
 

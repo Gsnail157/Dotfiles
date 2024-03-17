@@ -1,141 +1,127 @@
--- PLUGINS FILE FOR NVIM -- 
- fn = vim.fn
- -- Automatically install packer --
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim" if fn.empty(fn.glob(install_path)) > 0 then
-	PACKER_BOOTSTRAP = fn.system({ "git",
-		"clone",
-		"--depth",
-		"1",
-		"https://github.com/wbthomason/packer.nvim",
-		install_path,
-	})
-	print("Installing packer close and reopen Neovim...")
-    vim.cmd([[packadd packer.nvim]])
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({ "git", "clone", "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
 end
+vim.opt.rtp:prepend(lazypath)
 
--- Autocommand that reloads neovim whenever you save the plugins.lua file 
-vim.cmd([[
-    augroup packer_user_config
-        autocmd!
-        autocmd BufWritePost plugins.lua source <afile> | PackerSync
-    augroup end
-]])
+require("lazy").setup({
 
--- Use a protected call so we don't error out on first use
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-	return
-end
+    -- Neovim Dashboard --
+    { 'goolord/alpha-nvim', config = function()require'alpha'.setup(require'alpha.themes.dashboard'.config) end },
 
--- Have packer use a popup window
-packer.init({
-	display = {
-		open_fn = function()
-			return require("packer.util").float({ border = "rounded" })
-		end,
-	},
+    -- File Explorer --
+    { "nvim-tree/nvim-tree.lua",
+        config = function()
+            require("nvim-tree").setup({
+                sort = {
+                    sorter = "case_sensitive",
+                },
+                view = { width = 30 },
+                renderer = {
+                    group_empty = true,
+                },
+                filters = {
+                    dotfiles = false,
+                    },
+            })
+        end
+    },
+
+    -- Appearance --
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+    { 'nvim-tree/nvim-web-devicons' },
+    { "NvChad/nvim-colorizer.lua", 
+        config = function()
+            require('colorizer').setup({})    
+        end
+    },
+    { 'nvim-lualine/lualine.nvim', 
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    config = function()
+        require('lualine').setup({
+            options = { 
+                theme = 'nightfly',
+                section_separators = { left = ' ', right = ' ' },
+                component_separators = { left = '|', right = '|' }
+            }        
+        })
+    end
+    },
+    -- { "xiyaowong/transparent.nvim" },
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+
+    -- Editing --
+    { 'numToStr/Comment.nvim', 
+        lazy = false,
+        config = function()
+            require("Comment").setup()
+        end
+    },
+    { 'windwp/nvim-autopairs', event = "InsertEnter", config = true },
+    { "folke/which-key.nvim",
+    event = "VeryLazy",
+    init = function()
+        vim.o.timeout = true
+        vim.o.timeoutlen = 300
+    end,
+    opts = {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+        }
+    },
+
+    -- Auto Completions --
+    { "hrsh7th/nvim-cmp" }, -- The completion plugin
+    { "hrsh7th/cmp-cmdline" }, -- commandline completions 
+    { "hrsh7th/cmp-buffer" }, -- buffer completions
+    { "hrsh7th/cmp-path" }, -- path completions
+    { "hrsh7th/cmp-nvim-lsp" }, -- path completions
+    { "saadparwaiz1/cmp_luasnip" }, -- snippet completions
+
+    -- Snippet Engine --
+    { "L3MON4D3/LuaSnip", 
+        version = "v2.*", 
+        build = "make install_jsregexp"
+    },
+
+    -- TeleScope --
+    { 'nvim-telescope/telescope.nvim', 
+        tag = '0.1.6',
+        dependencies = { 'nvim-lua/plenary.nvim' }
+    },
+
+    -- LSP -- 
+    { "neovim/nvim-lspconfig" },
+    { "williamboman/mason.nvim",
+        config = function()
+            require("mason").setup()
+        end
+    },
+    { "williamboman/mason-lspconfig.nvim",
+        config = function()
+            require("mason-lspconfig").setup()
+        end
+    },
+
+    --  Git --
+    { "lewis6991/gitsigns.nvim" }
+    
 })
 
--- Install your plugins here
-return packer.startup(function(use)
-    -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
-    
-    -- Icons --
-    use 'nvim-tree/nvim-web-devicons'
 
-    -- Auto Complete for autopairs -- 
-    use { 'windwp/nvim-autopairs', 
-        event = "InsertEnter",
-        config = function()
-            require("nvim-autopairs").setup {}
-        end
-    }
-    -- Git integration in nvim --
-    use  { 'lewis6991/gitsigns.nvim',
-        config = function() 
-            require('gitsigns').setup {}
-        end
-    }
 
-    -- Show indent lines -- 
-    use { 'lukas-reineke/indent-blankline.nvim',
-        config = function()
-            require('ibl').setup()
-        end,
-        event = "BufAdd"
-    }
-    
-    -- Status Bar --
-    use { 'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true },
-        config = function()
-            require('lualine').setup {
-                options = {
-                    theme = 'nightfly',
-                    component_separators = { left = '|', right = '|' },
-                    section_separators = { left = '', right = ''}
-                } 
-            }
-        end
-    }
-    
-    -- Startup Menu for Neovim -- 
-    use { 'nvimdev/dashboard-nvim', 
-        event = 'VimEnter',
-        config = function()
-            require('dashboard').setup()
-        end,
-        requires = { 'nvim-tree/nvim-web-devicons' }
-    }
 
-    -- Completetion --
-    use { "hrsh7th/cmp-nvim-lsp" }
-    use { "hrsh7th/cmp-buffer" }
-    use { "hrsh7th/cmp-path" }
-    use { "hrsh7th/cmp-cmdline" }
-    use { "hrsh7th/nvim-cmp" }
 
-    -- LSP --
-    use { 'neovim/nvim-lspconfig' }
-    use { 'williamboman/mason.nvim', config = function()require('mason').setup() end }
-    use { 'williamboman/mason-lspconfig.nvim',
-        config = function()require("mason-lspconfig").setup{ }
-        end
-    }
 
-    -- Telescope --
-    use { 'nvim-telescope/telescope.nvim',
-        requires = { 'nvim-lua/plenary.nvim' } 
-    }
-    
-    -- Adding color feature to neovim --
-    use { 'NvChad/nvim-colorizer.lua',
-        config = function()
-            require('colorizer').setup()
-        end,
-    }
 
-    -- Color Scheme --
-    use { 'catppuccin/nvim', as = "catppuccin",
-        require("catppuccin")
-    }
-    
-    -- Transparent Background --
-    -- use { 'xiyaowong/transparent.nvim',
-    --     config = function()
-    --         require("transparent").setup()
-    --     end
-    -- }
 
-    -- Comment Code Plugin -- 
-    use { 'numToStr/Comment.nvim',
-        config = function()
-            require('Comment').setup()
-        end
-    }
 
-    if PACKER_BOOTSTRAP then
-		require("packer").sync()
-	end
-end)
+
+
+
+

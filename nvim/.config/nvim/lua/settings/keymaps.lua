@@ -1,69 +1,39 @@
 -- KEYMAPS FOR NEOVIM
-
--- Shorten Function Name
-local keymap = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true , expr = true, replace_keycodes = false }
+-- Shorten Function Name local keymap = vim.keymap.set 
+local opts = { noremap = true, silent = true }
+local keymap = vim.keymap.set
 
 -- Remap SPACE as leader key
 keymap("", "<SPACE>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Visual Mode Mappings --
+-- File Explorer --
+keymap("n", "<leader>et", ":NvimTreeToggle <cr>", opts)
+keymap("n", "<leader>ef", ":NvimTreeFocus <cr>", opts)
 
+-- Remap <ESC> key to enter into normal mode from insert mode
+keymap("i", "jk", "<ESC>", opts)
+keymap("v", "jk", "<ESC>", opts)
+
+-- Visual Mode Mappings --
 -- Stays in indent mode while in Visual Mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Move Text up and down with ALT-j or ALT-k
-keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
-keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
+keymap("v", "<C-j>", ":m '>+1<CR>gv=gv", opts)
+keymap("v", "<C-k>", ":m '<-2<CR>gv=gv", opts)
 
 -- Hold on to value even if you replace something with paste
 keymap("v", "p", '"_dp"', opts)
 
--- LSP KeyMaps --
+-- Auto completetion --
 
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
-vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
 
--- Use LspAttach autocommand to only map the following keys
--- after the language server attaches to the current buffer
-vim.api.nvim_create_autocmd('LspAttach', {
-  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-  callback = function(ev)
-    -- Enable completion triggered by <c-x><c-o>
-    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+-- TeleScope --
+keymap("n", "<leader>ff", ":Telescope find_files <cr>")
+keymap("n", "<leader>fg", ":Telescope live_grep <cr>")
+keymap("n", "<leader>fb", ":Telescope buffers <cr>")
+keymap("n", "<leader>fh", ":Telescope help_tags <cr>")
 
-    -- Buffer local mappings.
-    -- See `:help vim.lsp.*` for documentation on any of the below functions
-    local opts = { buffer = ev.buf }
-    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-    vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
-    vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
-    vim.keymap.set('n', '<space>wl', function()
-      print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-    end, opts)
-    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
-    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
-    vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-    vim.keymap.set('n', '<space>f', function()
-      vim.lsp.buf.format { async = true }
-    end, opts)
-  end,
-})
-
--- Telescope --
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
