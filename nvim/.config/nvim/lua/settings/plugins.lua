@@ -9,7 +9,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-
     -- Neovim Dashboard --
     { 'goolord/alpha-nvim', config = function()require'alpha'.setup(require'alpha.themes.dashboard'.config) end },
 
@@ -109,7 +108,11 @@ require("lazy").setup({
     },
 
     --  Git --
-    { "lewis6991/gitsigns.nvim" }
+    { "lewis6991/gitsigns.nvim",
+        config = function ()
+            require("gitsigns").setup()
+        end
+    }
     
 })
 
