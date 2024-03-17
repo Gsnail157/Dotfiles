@@ -19,7 +19,7 @@ require("lazy").setup({
                 sort = {
                     sorter = "case_sensitive",
                 },
-                view = { width = 30 },
+                view = { width = 25 },
                 renderer = {
                     group_empty = true,
                 },
@@ -30,23 +30,23 @@ require("lazy").setup({
         end
     },
 
-    -- Appearance --
+    -- Appearance -- 
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     { 'nvim-tree/nvim-web-devicons' },
-    { "NvChad/nvim-colorizer.lua", 
+    { "NvChad/nvim-colorizer.lua",
         config = function()
-            require('colorizer').setup({})    
+            require('colorizer').setup({})
         end
     },
-    { 'nvim-lualine/lualine.nvim', 
+    { 'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
         require('lualine').setup({
-            options = { 
+            options = {
                 theme = 'nightfly',
                 section_separators = { left = ' ', right = ' ' },
                 component_separators = { left = '|', right = '|' }
-            }        
+            }
         })
     end
     },
@@ -54,7 +54,7 @@ require("lazy").setup({
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 
     -- Editing --
-    { 'numToStr/Comment.nvim', 
+    { 'numToStr/Comment.nvim',
         lazy = false,
         config = function()
             require("Comment").setup()
@@ -83,13 +83,13 @@ require("lazy").setup({
     { "saadparwaiz1/cmp_luasnip" }, -- snippet completions
 
     -- Snippet Engine --
-    { "L3MON4D3/LuaSnip", 
-        version = "v2.*", 
+    { "L3MON4D3/LuaSnip",
+        version = "v2.*",
         build = "make install_jsregexp"
     },
 
     -- TeleScope --
-    { 'nvim-telescope/telescope.nvim', 
+    { 'nvim-telescope/telescope.nvim',
         tag = '0.1.6',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
@@ -113,18 +113,5 @@ require("lazy").setup({
             require("gitsigns").setup()
         end
     }
-    
 })
-
-
-
-
-
-
-
-
-
-
-
-
 
