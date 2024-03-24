@@ -107,7 +107,7 @@ gaps outer 2
 # Start the rofi menu 
 bindsym $mod+m exec --no-startup-id ~/.config/rofi/launchers/type-1/launcher.sh
 # start a Alacrrity Terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run
 

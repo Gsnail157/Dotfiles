@@ -22,7 +22,7 @@ if [[ ! -d "Pictures" ]]; then
 fi
 
 # Install all dependencies
-sudo pacman -S firefox rofi tmux polybar picom alacritty zsh stow base-devel lf
+sudo pacman -S firefox rofi tmux polybar picom alacritty zsh stow base-devel lf kitty
 
 # Installing Rofi Themes
 cd ~/Repos
@@ -44,11 +44,24 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 
+# Installing ctpv for image preview in lf
+yay -S ctpv-git
+
 # Installing oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Stow all the config files into their correct spot
 cd ~/DotFiles
-stow */
+stow i3
+stow lf
+stow neofetch
+stow nvim
+stow picom
+stow polybar
+stow scripts
+stow tmux
+stow wallpapers
+stow zsh
+stow kitty
 
 echo "Setup Complete!"
