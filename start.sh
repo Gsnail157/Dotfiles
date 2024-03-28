@@ -22,7 +22,7 @@ if [[ ! -d "Pictures" ]]; then
 fi
 
 # Install all dependencies
-sudo pacman -S firefox rofi tmux polybar picom alacritty zsh stow base-devel lf kitty
+sudo pacman -S firefox rofi tmux polybar picom alacritty zsh stow base-devel lf kitty exa
 
 # Installing Rofi Themes
 cd ~/Repos
