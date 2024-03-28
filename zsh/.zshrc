@@ -122,6 +122,5 @@ alias tmuxconfig="nv ~/.config/tmux/tmux.conf"
 alias kittyconfig="nv ~/.config/kitty/kitty.conf"
 
 # Copy over Term info
-
 # Copy if user is using kitty to ssh to remote server
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
