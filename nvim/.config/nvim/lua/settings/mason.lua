@@ -2,7 +2,6 @@ local servers = {
 	"lua_ls",
     "clangd",
     "texlab",
-    "grammarly",
     "ltex"
 }
 
