@@ -22,7 +22,7 @@ if [[ ! -d "Pictures" ]]; then
 fi
 
 # Install all dependencies
-sudo pacman -S firefox rofi tmux polybar picom alacritty zsh stow base-devel lf kitty exa
+sudo pacman -S firefox rofi polybar picom zsh stow base-devel lf kitty exa
 
 # Installing Rofi Themes
 cd ~/Repos
@@ -47,6 +47,10 @@ makepkg -si
 # Installing ctpv for image preview in lf
 yay -S ctpv-git
 
+# Installing Icons for LF terminal file manager
+mkdir -p ~/.config/lf
+curl https://raw.githubusercontent.com/gokcehan/lf/master/etc/icons.example -o ~/.config/lf/icons
+
 # Installing oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -59,7 +63,6 @@ stow nvim
 stow picom
 stow polybar
 stow scripts
-stow tmux
 stow wallpapers
 stow zsh
 stow kitty
