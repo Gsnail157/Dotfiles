@@ -122,10 +122,10 @@ alias cls="clear"
 alias anime="ani-cli --rofi --dub"
 alias tmuxconfig="nv ~/.config/tmux/tmux.conf"
 alias kittyconfig="nv ~/.config/kitty/kitty.conf"
-alias ls="exa --icons"
-alias ll="exa --icons -l"
-alias tree="exa --tree --level=2"
-
+# alias ls="exa --icons"
+# alias ll="exa --icons -l"
+# alias tree="exa --tree --level=2"
+#
 # Copy over Term info
 # Copy if user is using kitty to ssh to remote server
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"

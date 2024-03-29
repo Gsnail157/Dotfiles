@@ -107,6 +107,29 @@ require("lazy").setup({
         end
     },
 
+    -- treesitter --
+
+    { "nvim-treesitter/nvim-treesitter",
+        config = function()
+            require("nvim-treesitter.configs").setup({
+                ensured_installed = { "c", "lua", "latex", "python", "cpp" },
+                sync_install = false,
+                auto_install = true,
+                hightlight = {
+                    enable = true
+                }
+        })
+        end
+    },
+
+    -- LateX Support --
+    { "lervag/vimtex",
+        ft = "tex",
+        lazy = false,
+        init = function()
+        end
+    },
+
     --  Git --
     { "lewis6991/gitsigns.nvim",
         config = function ()
@@ -114,4 +137,3 @@ require("lazy").setup({
         end
     }
 })
-

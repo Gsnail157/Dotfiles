@@ -28,12 +28,14 @@ keymap("v", "<C-k>", ":m '<-2<CR>gv=gv", opts)
 -- Hold on to value even if you replace something with paste
 keymap("v", "p", '"_dp"', opts)
 
--- Auto completetion --
-
-
 -- TeleScope --
 keymap("n", "<leader>ff", ":Telescope find_files <cr>")
 keymap("n", "<leader>fg", ":Telescope live_grep <cr>")
 keymap("n", "<leader>fb", ":Telescope buffers <cr>")
 keymap("n", "<leader>fh", ":Telescope help_tags <cr>")
+
+-- VimTex --
+keymap("n", "<leader>vs", ":w | VimtexCompile <cr>")
+keymap("n", "<leader>vv", ":VimtexView <cr>")
+keymap("n", "<leader>vc", ":VimtexClean <cr>")
 
