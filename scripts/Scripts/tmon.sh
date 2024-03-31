@@ -7,5 +7,4 @@ if xrandr | grep "$extern disconnected"; then
 else
     xrandr --output "$intern" --off --output "$extern" --auto
     xrandr --output "$extern" --scale 1.25x1.25
-    ./~/.fehbg
 fi

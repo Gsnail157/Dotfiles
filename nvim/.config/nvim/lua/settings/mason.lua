@@ -2,7 +2,9 @@ local servers = {
 	"lua_ls",
     "clangd",
     "texlab",
-    "ltex"
+    "ltex",
+    "pylsp",
+    "pyre"
 }
 
 local settings = {

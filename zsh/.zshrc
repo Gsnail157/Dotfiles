@@ -4,6 +4,8 @@ if [ -z "${DISPLAY}" ] && [ $(tty) = /dev/tty1 ]; then
   exec startx
 fi
 
+export PATH=$PATH:~/Scripts/
+
 source ~/Repos/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 () {
    local -a prefix=( '\e'{\[,O} )
@@ -34,7 +36,7 @@ alias alacrittyconfig="nv ~/.config/alacritty/alacritty.toml"
 alias i3config="nv ~/.config/i3/config"
 alias polybarconfig="nv ~/.config/polybar/config.ini"
 alias cls="clear"
-alias anime="ani-cli --rofi --dub"
+alias anime="ani-cli --rofi"
 alias tmuxconfig="nv ~/.config/tmux/tmux.conf"
 alias kittyconfig="nv ~/.config/kitty/kitty.conf"
 # alias ls="exa --icons"
