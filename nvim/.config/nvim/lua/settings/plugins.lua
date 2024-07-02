@@ -51,6 +51,9 @@ require("lazy").setup({
     { "xiyaowong/transparent.nvim" },
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 
+    -- Terminal --
+    {'akinsho/toggleterm.nvim', version = "*", config = true},
+
     -- Editing --
     { 'numToStr/Comment.nvim',
         lazy = false,

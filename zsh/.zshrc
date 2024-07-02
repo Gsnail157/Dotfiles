@@ -3,11 +3,7 @@
 if [ -z "${DISPLAY}" ] && [ $(tty) = /dev/tty1 ]; then
   exec startx
 fi
-
-source ~/Repos/zsh-autocomplete/zsh-autocomplete.plugin.zsh # If you come from bash you might have to change your $PATH. export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$PATH:~/Scripts/
-
-source ~/Repos/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source ~/Repos/zsh-autocomplete/zsh-autocomplete.plugin.zsh # If you come from bash you might have to change your $PATH. export PATH=$HOME/bin:/usr/local/bin:$PATH export PATH=$PATH:~/Scripts/ source ~/.bashrc source ~/Repos/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 () {
    local -a prefix=( '\e'{\[,O} )
    local -a up=( ${^prefix}A ) down=( ${^prefix}B )
@@ -40,6 +36,12 @@ alias cls="clear"
 alias anime="ani-cli --rofi"
 alias tmuxconfig="nv ~/.config/tmux/tmux.conf"
 alias kittyconfig="nv ~/.config/kitty/kitty.conf"
+alias manga='mangodl'
+alias picomconfig="nv ~/.config/picom/picom.conf"
+alias ls="ls -l"
+alias batthealth='acpi -V'
+alias vf='nv $(fzf)'
+alias fm="nemo"
 # alias ls="exa --icons"
 # alias ll="exa --icons -l"
 # alias tree="exa --tree --level=2"
@@ -48,4 +50,21 @@ alias kittyconfig="nv ~/.config/kitty/kitty.conf"
 # Copy if user is using kitty to ssh to remote server
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 
-neofetch
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/gawang/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/gawang/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/gawang/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/gawang/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+fastfetch --logo ~/Pictures/random/char.jpg --logo-type kitty --logo-width 35 --logo-height 15
+
+export PATH=$PATH:/home/gawang/.spicetify

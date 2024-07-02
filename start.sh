@@ -33,7 +33,9 @@ fi
 # Network Manager - networkmanager
 # pdf viewer - zathura, zathura-poppler
 # LaTeX compiler - texlive-binextra, biber
-sudo pacman -S rofi polybar picom zsh stow base-devel lf kitty exa xorg-xrandr feh networkmanager playerctl zathura zathura-poppler texlive-binextra biber
+# dunst - Notification daemon
+# xorg-xbacklight - Screen brightness
+sudo pacman -S rofi polybar picom zsh stow base-devel lf kitty xorg-xrandr feh networkmanager playerctl zathura zathura-poppler neovim dunst xorg-xbacklight
 
 # Set up networkmanager
 sudo systemctl enable NetworkManager.service
@@ -69,6 +71,10 @@ curl https://raw.githubusercontent.com/gokcehan/lf/master/etc/icons.example -o ~
 # Install zsh Theme
 mkdir -p "$HOME/.zsh"
 git clone --depth=1 https://github.com/spaceship-prompt/spaceship-prompt.git "$HOME/.zsh/spaceship"
+
+# Download autotiling for i3
+# Allows the terminal windows in i3 to auto tile themselves. No more manual window tiling
+yay -S autotiling
 
 # Stow all the config files into their correct spot
 cd ~/DotFiles
